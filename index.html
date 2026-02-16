@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Lucía Abadie — Dermatóloga en Montevideo</title>
+    <meta name="description" content="Dra. Lucía Abadie, médica dermatóloga. Dermatología clínica, estética y pediátrica. Centro Láser Dermatológico, Montevideo. Agendá tu consulta por WhatsApp.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{--teal:#6BADA0;--teal-dark:#4E9488;--teal-light:#8EC5BB;--teal-pale:#E8F4F1;--cream:#FAFAF7;--white:#FFF;--dark:#1A2332;--dark2:#2C3A4B;--gray1:#4A5568;--gray2:#718096;--gray3:#A0AEC0;--gray4:#CBD5E0;--gray5:#E2E8F0;--gold:#C4A265;--blue-brand:#1a8fc4;--wa-green:#25d366;--radius:16px;--radius-sm:10px;--shadow-sm:0 1px 3px rgba(0,0,0,.06);--shadow:0 4px 20px rgba(0,0,0,.06);--shadow-lg:0 10px 40px rgba(0,0,0,.08);--shadow-teal:0 8px 30px rgba(107,173,160,.2);--transition:.3s cubic-bezier(.4,0,.2,1)}
+        *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+        body{font-family:'Inter',-apple-system,sans-serif;background:var(--white);color:var(--dark);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+        .container{max-width:1100px;margin:0 auto;padding:0 24px}
+        nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.05);transition:var(--transition)}
+        nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+        .nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+        .nav-brand img{height:40px;border-radius:50%}
+        .nav-brand-text{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--dark)}
+        .nav-brand-text span{color:var(--blue-brand)}
+        .nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+        .nav-links a{text-decoration:none;color:var(--gray2);font-size:14px;font-weight:500;transition:var(--transition)}
+        .nav-links a:hover{color:var(--teal)}
+        .nav-cta{background:var(--wa-green)!important;color:#fff!important;padding:10px 20px!important;border-radius:100px;font-weight:600!important;font-size:13px!important;display:inline-flex!important;align-items:center;gap:6px;transition:var(--transition)}
+        .nav-cta:hover{background:#22c55e!important;box-shadow:0 4px 16px rgba(37,211,102,.3)}
+        .nav-cta svg{width:16px;height:16px;fill:#fff}
+        .nav-mobile{display:none;background:none;border:none;color:var(--dark);cursor:pointer;padding:8px}
+        .hero{padding:130px 0 80px;background:linear-gradient(180deg,#eef7f5 0%,var(--white) 100%);position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(107,173,160,.08) 0%,transparent 70%);pointer-events:none}
+        .hero .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+        .hero-tag{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--gray5);padding:6px 16px;border-radius:100px;font-size:12px;color:var(--teal);font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:24px;box-shadow:var(--shadow-sm)}
+        .hero-tag .dot{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:blink 2s ease infinite}
+        @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+        .hero h1{font-family:'Playfair Display',serif;font-size:clamp(34px,4.2vw,50px);font-weight:600;line-height:1.15;letter-spacing:-.5px;color:var(--dark);margin-bottom:20px}
+        .hero h1 em{color:var(--teal);font-style:italic}
+        .hero-sub{font-size:16px;color:var(--gray2);line-height:1.75;margin-bottom:32px;max-width:440px}
+        .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+        .btn-wa{display:inline-flex;align-items:center;gap:10px;background:var(--wa-green);color:#fff;padding:16px 30px;border-radius:100px;text-decoration:none;font-weight:600;font-size:15px;transition:var(--transition);border:none;cursor:pointer}
+        .btn-wa:hover{background:#22c55e;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.3)}
+        .btn-wa svg{width:20px;height:20px;fill:#fff}
+        .btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--dark);padding:16px 30px;border-radius:100px;text-decoration:none;font-weight:600;font-size:15px;border:1.5px solid var(--gray4);transition:var(--transition)}
+        .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+        .hero-info{display:flex;gap:28px;margin-top:32px;padding-top:24px;border-top:1px solid var(--gray5)}
+        .hero-info-item{text-align:center}
+        .hero-info-num{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--teal)}
+        .hero-info-label{font-size:11px;color:var(--gray3);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+        .hero-visual{position:relative}
+        .hero-img-main{width:100%;max-width:400px;border-radius:200px 200px 40px 40px;overflow:hidden;position:relative;margin:0 auto;box-shadow:var(--shadow-lg)}
+        .hero-img-main img{width:100%;height:500px;object-fit:cover;object-position:top center;display:block}
+        .hero-float{position:absolute;background:#fff;border-radius:var(--radius-sm);padding:14px 18px;box-shadow:var(--shadow-lg);z-index:3;animation:float 5s ease-in-out infinite}
+        .float-top{top:40px;left:-20px;display:flex;align-items:center;gap:10px}
+        .float-top .icon{width:38px;height:38px;background:var(--teal-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px}
+        .float-top .label{font-size:11px;color:var(--gray3)}
+        .float-top .value{font-size:13px;font-weight:700;color:var(--dark)}
+        .float-bottom{bottom:60px;right:-16px;text-align:center;animation-delay:-2.5s}
+        .float-bottom .stars{color:var(--gold);font-size:14px;letter-spacing:2px}
+        .float-bottom .label{font-size:11px;color:var(--gray2);margin-top:3px}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+        section{padding:90px 0}
+        .s-tag{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:12px}
+        .s-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.2vw,38px);font-weight:600;line-height:1.2;color:var(--dark);margin-bottom:14px}
+        .s-sub{font-size:15px;color:var(--gray2);max-width:520px;line-height:1.7}
+        .s-header{margin-bottom:52px}
+        .s-header.center{text-align:center}
+        .s-header.center .s-sub{margin:0 auto}
+        .about{background:var(--cream)}
+        .about .container{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+        .about-img{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg)}
+        .about-img img{width:100%;height:440px;object-fit:cover;display:block}
+        .about-text{font-size:15px;color:var(--gray1);line-height:1.8;margin-bottom:14px}
+        .about-credentials{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+        .credential{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--gray1)}
+        .credential .ck{color:var(--teal);font-weight:700;flex-shrink:0;margin-top:1px}
+        .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+        .svc{background:#fff;border:1px solid var(--gray5);border-radius:var(--radius);padding:32px 24px;transition:var(--transition);position:relative;overflow:hidden}
+        .svc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--teal-light));transform:scaleX(0);transition:var(--transition)}
+        .svc:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px);border-color:var(--teal-light)}
+        .svc:hover::before{transform:scaleX(1)}
+        .svc-icon{width:48px;height:48px;background:var(--teal-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px}
+        .svc h3{font-size:16px;font-weight:700;margin-bottom:8px}
+        .svc p{font-size:13px;color:var(--gray2);line-height:1.7}
+        .svc-cta{display:inline-flex;align-items:center;gap:6px;margin-top:14px;font-size:13px;font-weight:600;color:var(--teal);text-decoration:none;transition:var(--transition)}
+        .svc-cta:hover{color:var(--teal-dark);gap:10px}
+        .places{background:var(--cream)}
+        .places-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+        .place{background:#fff;border:1px solid var(--gray5);border-radius:var(--radius);padding:28px 22px;text-align:center;transition:var(--transition)}
+        .place:hover{box-shadow:var(--shadow)}
+        .place-icon{font-size:28px;margin-bottom:12px}
+        .place h3{font-size:15px;font-weight:700;margin-bottom:4px}
+        .place p{font-size:13px;color:var(--gray2)}
+        .cta-section{background:linear-gradient(135deg,var(--dark) 0%,var(--dark2) 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+        .cta-section::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(107,173,160,.1) 0%,transparent 60%);pointer-events:none}
+        .cta-section .s-tag{color:var(--teal-light)}
+        .cta-section .s-title{color:#fff}
+        .cta-section .s-title em{color:var(--teal-light);font-style:italic}
+        .cta-section p{color:var(--gray3);font-size:16px;margin-bottom:32px}
+        .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+        .testi-card{background:#fff;border:1px solid var(--gray5);border-radius:var(--radius);padding:28px}
+        .testi-stars{color:var(--gold);font-size:14px;letter-spacing:2px;margin-bottom:14px}
+        .testi-text{font-size:14px;color:var(--gray1);line-height:1.8;font-style:italic;margin-bottom:18px}
+        .testi-author{display:flex;align-items:center;gap:10px}
+        .testi-av{width:38px;height:38px;border-radius:50%;background:var(--teal-pale);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:var(--teal)}
+        .testi-name{font-size:13px;font-weight:600}
+        .testi-role{font-size:11px;color:var(--gray3)}
+        .contact{background:var(--cream)}
+        .contact .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+        .contact-info{display:flex;flex-direction:column;gap:24px}
+        .contact-item{display:flex;align-items:flex-start;gap:14px}
+        .contact-item .icon{width:44px;height:44px;background:var(--teal-pale);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+        .contact-item h4{font-size:14px;font-weight:700;margin-bottom:3px}
+        .contact-item p{font-size:13px;color:var(--gray2)}
+        .contact-item a{color:var(--teal);text-decoration:none;font-weight:500}
+        .contact-item a:hover{color:var(--teal-dark)}
+        .contact-map{width:100%;height:340px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--gray5);box-shadow:var(--shadow)}
+        .contact-map iframe{width:100%;height:100%;border:0}
+        footer{background:var(--dark);padding:44px 0 24px;text-align:center}
+        .footer-brand{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:#fff;margin-bottom:8px}
+        .footer-brand span{color:var(--teal-light)}
+        footer .footer-desc{font-size:13px;color:var(--gray3);margin-bottom:20px}
+        .footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:24px;flex-wrap:wrap}
+        .footer-links a{color:var(--gray3);text-decoration:none;font-size:13px;transition:var(--transition)}
+        .footer-links a:hover{color:var(--teal-light)}
+        .footer-line{border-top:1px solid rgba(255,255,255,.08);padding-top:18px}
+        .footer-line p{font-size:11px;color:rgba(255,255,255,.25);margin:0}
+        .footer-line a{color:rgba(255,255,255,.35);text-decoration:none}
+        .footer-line a:hover{color:var(--teal-light)}
+        .wa-float{position:fixed;bottom:24px;right:24px;z-index:999;display:flex;align-items:center;gap:10px;background:var(--wa-green);color:#fff;padding:14px 24px;border-radius:100px;text-decoration:none;font-weight:600;font-size:14px;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:var(--transition)}
+        .wa-float:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(37,211,102,.5)}
+        .wa-float svg{width:22px;height:22px;fill:#fff}
+        .wa-float-text{display:inline}
+        .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+        .reveal.vis{opacity:1;transform:translateY(0)}
+        @media(max-width:1024px){.hero .container,.about .container{grid-template-columns:1fr;gap:48px}.hero-visual{order:-1}.hero-img-main{max-width:300px}.hero-img-main img{height:380px}.services-grid,.places-grid,.testi-grid{grid-template-columns:1fr 1fr}.contact .container{grid-template-columns:1fr}}
+        @media(max-width:768px){.nav-links{display:none}.nav-mobile{display:block}nav.mopen .nav-links{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);padding:24px;gap:18px;border-bottom:1px solid var(--gray5)}.hero{padding:110px 0 50px}.hero-img-main{max-width:240px}.hero-img-main img{height:320px}.hero-info{gap:16px;flex-wrap:wrap;justify-content:center}.hero-float{display:none}section{padding:60px 0}.services-grid,.places-grid,.testi-grid{grid-template-columns:1fr}.hero-btns{flex-direction:column}.btn-wa,.btn-ghost{justify-content:center;width:100%}.wa-float{padding:14px;border-radius:50%}.wa-float-text{display:none}.about-img img{height:300px}}
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <div class="container">
+            <a href="#" class="nav-brand">
+                <img src="img/logo-centro.jpg" alt="Centro Láser Dermatológico">
+                <div class="nav-brand-text">Dra. Lucía <span>Abadie</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#donde-atiendo">Dónde atiendo</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="https://wa.me/59892759316?text=Hola%20Dra.%20Lucía!%20Quiero%20agendar%20una%20consulta%20%F0%9F%A9%BA" target="_blank" class="nav-cta"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Agendar consulta</a></li>
+            </ul>
+            <button class="nav-mobile" onclick="document.getElementById('nav').classList.toggle('mopen')" aria-label="Menú"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-tag"><span class="dot"></span> Aceptando nuevos pacientes</div>
+                <h1>Dermatología <em>clínica, estética</em> y pediátrica</h1>
+                <p class="hero-sub">Soy la Dra. Lucía Abadie, médica dermatóloga. Te acompaño en el cuidado de tu piel con un enfoque profesional, personalizado y con tecnología de última generación.</p>
+                <div class="hero-btns">
+                    <a href="https://wa.me/59892759316?text=Hola%20Dra.%20Lucía!%20Quiero%20agendar%20una%20consulta%20%F0%9F%A9%BA" target="_blank" class="btn-wa"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Agendar por WhatsApp</a>
+                    <a href="#servicios" class="btn-ghost">Ver servicios →</a>
+                </div>
+                <div class="hero-info">
+                    <div class="hero-info-item"><div class="hero-info-num">+27</div><div class="hero-info-label">Años del centro</div></div>
+                    <div class="hero-info-item"><div class="hero-info-num">15K+</div><div class="hero-info-label">Seguidores</div></div>
+                    <div class="hero-info-item"><div class="hero-info-num">6</div><div class="hero-info-label">Centros médicos</div></div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-img-main"><img src="img/hero-lucia.png" alt="Dra. Lucía Abadie - Dermatóloga"></div>
+                <div class="hero-float float-top"><div class="icon">🩺</div><div><div class="label">Centro Láser</div><div class="value">Dermatológico y Estético</div></div></div>
+                <div class="hero-float float-bottom"><div class="stars">★★★★★</div><div class="label">Pacientes satisfechos</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="sobre-mi">
+        <div class="container">
+            <div class="about-img"><img src="img/consultorio.png" alt="Centro Láser Dermatológico"></div>
+            <div class="about-content">
+                <div class="s-header"><div class="s-tag">Sobre mí</div><h2 class="s-title">Dra. Lucía Abadie</h2></div>
+                <p class="about-text">Médica egresada de la Universidad de la República, con especialización en Dermatología Médico Quirúrgica. Me apasionan la dermatología estética y pediátrica.</p>
+                <p class="about-text">Formo parte del equipo del Centro Láser Dermatológico y Estético, con más de 27 años de trayectoria en salud y rejuvenecimiento de la piel con respaldo médico.</p>
+                <div class="about-credentials">
+                    <div class="credential"><span class="ck">✓</span><span>Posgrado en Medicina Estética — Escuela Avicena, Argentina</span></div>
+                    <div class="credential"><span class="ck">✓</span><span>Máster en Dermatología Pediátrica — Universidad Cardenal Herrera, España</span></div>
+                    <div class="credential"><span class="ck">✓</span><span>Pasantía en Dermatología Pediátrica — Buenos Aires, Argentina</span></div>
+                    <div class="credential"><span class="ck">✓</span><span>Formación continua en congresos nacionales e internacionales</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios">
+        <div class="container">
+            <div class="s-header center"><div class="s-tag">Servicios</div><h2 class="s-title">Cuidado integral de tu piel</h2><p class="s-sub">Tratamientos personalizados con tecnología de última generación.</p></div>
+            <div class="services-grid">
+                <div class="svc reveal"><div class="svc-icon">💉</div><h3>Toxina Botulínica</h3><p>Tratamiento de líneas de expresión y arrugas dinámicas con resultados naturales.</p><a href="https://wa.me/59892759316?text=Hola!%20Quiero%20consultar%20sobre%20botox" target="_blank" class="svc-cta">Consultar →</a></div>
+                <div class="svc reveal"><div class="svc-icon">✨</div><h3>Ácido Hialurónico</h3><p>Rellenos en labios, ojeras, surco nasogeniano y valle lagrimal. Resultados armoniosos.</p><a href="https://wa.me/59892759316?text=Hola!%20Quiero%20consultar%20sobre%20ácido%20hialurónico" target="_blank" class="svc-cta">Consultar →</a></div>
+                <div class="svc reveal"><div class="svc-icon">🔬</div><h3>Tratamiento Láser</h3><p>Tecnología láser y luz pulsada para lesiones vasculares, manchas y rejuvenecimiento.</p><a href="https://wa.me/59892759316?text=Hola!%20Quiero%20consultar%20sobre%20tratamiento%20láser" target="_blank" class="svc-cta">Consultar →</a></div>
+                <div class="svc reveal"><div class="svc-icon">👶</div><h3>Dermatología Pediátrica</h3><p>Atención especializada de la piel en bebés y niños. Dermatitis, manchas y más.</p><a href="https://wa.me/59892759316?text=Hola!%20Quiero%20consultar%20sobre%20dermatología%20pediátrica" target="_blank" class="svc-cta">Consultar →</a></div>
+                <div class="svc reveal"><div class="svc-icon">🔎</div><h3>Dermatología Clínica</h3><p>Diagnóstico y tratamiento de enfermedades de la piel, pelo y uñas. Control de lunares.</p><a href="https://wa.me/59892759316?text=Hola!%20Quiero%20agendar%20consulta%20dermatológica" target="_blank" class="svc-cta">Consultar →</a></div>
+                <div class="svc reveal"><div class="svc-icon">⚡</div><h3>Jett Plasma Láser</h3><p>Blefaroplastia no quirúrgica, arrugas finas, cicatrices, lesiones benignas y flacidez.</p><a href="https://wa.me/59892759316?text=Hola!%20Quiero%20consultar%20sobre%20Jett%20Plasma" target="_blank" class="svc-cta">Consultar →</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container reveal">
+            <div class="s-tag">Agenda tu consulta</div>
+            <h2 class="s-title">Tu piel merece <em>atención profesional</em></h2>
+            <p>Escribime por WhatsApp y coordinamos tu consulta de forma rápida y sencilla.</p>
+            <a href="https://wa.me/59892759316?text=Hola%20Dra.%20Lucía!%20Quiero%20agendar%20una%20consulta%20%F0%9F%A9%BA" target="_blank" class="btn-wa" style="font-size:16px;padding:18px 36px"><svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Agendar por WhatsApp</a>
+        </div>
+    </section>
+
+    <section class="places" id="donde-atiendo">
+        <div class="container">
+            <div class="s-header center"><div class="s-tag">Dónde atiendo</div><h2 class="s-title">Centros y consultorios</h2><p class="s-sub">Encontrame en estos centros médicos de Montevideo y Paysandú.</p></div>
+            <div class="places-grid">
+                <div class="place reveal"><div class="place-icon">🏥</div><h3>Centro Láser Dermatológico</h3><p>Francisco Muñoz 2957, Montevideo</p></div>
+                <div class="place reveal"><div class="place-icon">🏥</div><h3>Hospital Pereira Rossell</h3><p>Montevideo</p></div>
+                <div class="place reveal"><div class="place-icon">🏥</div><h3>Summum Medicina</h3><p>Montevideo</p></div>
+                <div class="place reveal"><div class="place-icon">🏥</div><h3>COSEMUY</h3><p>Montevideo</p></div>
+                <div class="place reveal"><div class="place-icon">🏥</div><h3>MUCAM</h3><p>Montevideo</p></div>
+                <div class="place reveal"><div class="place-icon">🏥</div><h3>Oral Med Consultorios</h3><p>Paysandú</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios">
+        <div class="container">
+            <div class="s-header center"><div class="s-tag">Testimonios</div><h2 class="s-title">Lo que dicen mis pacientes</h2></div>
+            <div class="testi-grid">
+                <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p class="testi-text">"Fui con mi hija por un tratamiento y los resultados fueron excelentes en pocas sesiones."</p><div class="testi-author"><div class="testi-av">GC</div><div><div class="testi-name">Gaston Carvalho</div><div class="testi-role">Paciente</div></div></div></div>
+                <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p class="testi-text">"Excelente atención. Profesionales destacados y con orientación al paciente. Tratamientos de primera línea con muy buenos resultados. Gracias!"</p><div class="testi-author"><div class="testi-av">MG</div><div><div class="testi-name">Mariana Garcia</div><div class="testi-role">Paciente</div></div></div></div>
+                <div class="testi-card reveal"><div class="testi-stars">★★★★★</div><p class="testi-text">"La atención es puntual, todos son super amables y profesionales. Estoy tratando mi acné desde hace un tiempo y cada vez que voy salgo super satisfecha, he mejorado muchísimo."</p><div class="testi-author"><div class="testi-av">NC</div><div><div class="testi-name">Natalia Camargo</div><div class="testi-role">Paciente</div></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div>
+                <div class="s-header"><div class="s-tag">Contacto</div><h2 class="s-title">¿Querés agendar tu consulta?</h2><p class="s-sub">Escribime por WhatsApp y coordinamos rápido.</p></div>
+                <div class="contact-info">
+                    <div class="contact-item"><div class="icon">📱</div><div><h4>WhatsApp</h4><p><a href="https://wa.me/59892759316?text=Hola%20Dra.%20Lucía!%20Quiero%20agendar%20una%20consulta" target="_blank">092 759 316</a></p></div></div>
+                    <div class="contact-item"><div class="icon">📍</div><div><h4>Consultorio principal</h4><p>Francisco Muñoz 2957, Montevideo</p></div></div>
+                    <div class="contact-item"><div class="icon">📸</div><div><h4>Instagram</h4><p><a href="https://instagram.com/dermatologa.luciaabadie" target="_blank">@dermatologa.luciaabadie</a></p></div></div>
+                    <div class="contact-item"><div class="icon">🏥</div><div><h4>Centro Láser Dermatológico</h4><p><a href="https://instagram.com/centrolaserdermatologico" target="_blank">@centrolaserdermatologico</a></p></div></div>
+                </div>
+            </div>
+            <div class="contact-map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3272.3!2d-56.161!3d-34.901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f81c2a0b1c8d3%3A0x1234!2sFrancisco%20Mu%C3%B1oz%202957%2C%20Montevideo!5e0!3m2!1ses!2suy!4v1" allowfullscreen="" loading="lazy"></iframe></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-brand">Dra. Lucía <span>Abadie</span></div>
+            <p class="footer-desc">Médica Dermatóloga — Dermatología Clínica, Estética y Pediátrica<br>Centro Láser Dermatológico y Estético — Montevideo, Uruguay</p>
+            <div class="footer-links"><a href="#sobre-mi">Sobre mí</a><a href="#servicios">Servicios</a><a href="#donde-atiendo">Dónde atiendo</a><a href="#testimonios">Testimonios</a><a href="#contacto">Contacto</a></div>
+            <div class="footer-line"><p>© 2026 Dra. Lucía Abadie · Diseño por <a href="https://wa.me/598091995706?text=Hola!%20Vi%20el%20sitio%20de%20la%20Dra.%20Lucía%20Abadie%20y%20quiero%20cotizar%20uno%20similar" target="_blank">SitioKit</a></p></div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/59892759316?text=Hola%20Dra.%20Lucía!%20Quiero%20agendar%20una%20consulta%20%F0%9F%A9%BA" target="_blank" class="wa-float"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="wa-float-text">Agendar consulta</span></a>
+
+    <script>
+        const obs=new IntersectionObserver((entries)=>{entries.forEach((entry,i)=>{if(entry.isIntersecting){setTimeout(()=>entry.target.classList.add('vis'),i*80);obs.unobserve(entry.target)}})},{threshold:.1});
+        document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){e.preventDefault();const t=document.querySelector(this.getAttribute('href'));if(t){t.scrollIntoView({behavior:'smooth'});document.getElementById('nav').classList.remove('mopen')}})});
+        window.addEventListener('scroll',()=>{document.getElementById('nav').style.boxShadow=window.scrollY>50?'0 2px 20px rgba(0,0,0,.06)':'none'});
+    </script>
+</body>
+</html>
